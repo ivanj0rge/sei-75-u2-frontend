@@ -102,7 +102,7 @@ export default {
   methods: {
     async fetchStudents() {
       try {
-        const response = await fetch('http://localhost:3000/students/');
+        const response = await fetch(process.env.VUE_APP_BACKEND_API + '/students/');
         if (response.ok) {
           const data = await response.json();
           this.students = data;
@@ -119,7 +119,7 @@ export default {
   const day = currentDate.getDate();
   const today = `${year}-${month}-${day}`;
   try {
-    const response = await fetch('http://localhost:3000/sessions');
+    const response = await fetch(process.env.VUE_APP_BACKEND_API + '/sessions');
     if (response.ok) {
       const data = await response.json();
 
@@ -165,7 +165,7 @@ export default {
       const day = currentDate.getDate();
       const today = `${year}-${month}-${day}`;
       try {
-        const response = await fetch('http://localhost:3000/sessions', {
+        const response = await fetch(process.env.VUE_APP_BACKEND_API + '/sessions', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -215,7 +215,7 @@ export default {
             }
 
             try {
-              const response = await fetch(`http://localhost:3000/students/${student.id}`, {
+              const response = await fetch(process.env.VUE_APP_BACKEND_API + `/students/${student.id}`, {
                 method: 'PUT',
                 headers: {
                   'Content-Type': 'application/json',
@@ -239,7 +239,7 @@ export default {
           }
           this.currentSession[0].attendance = Array.from(attendedStudentIds)
           try {
-            await fetch(`http://localhost:3000/sessions/${sessionID}`, {
+            await fetch(process.env.VUE_APP_BACKEND_API + `/sessions/${sessionID}`, {
               method: 'PUT',
               headers: {
                 'Content-Type': 'application/json',
@@ -265,7 +265,7 @@ export default {
     async fetchAttendingStudentsData() {
     if (this.currentSession[0].attendance.length > 0) {
       try {
-        const response = await fetch('http://localhost:3000/students');
+        const response = await fetch(process.env.VUE_APP_BACKEND_API + '/students');
         if (response.ok) {
           const studentsData = await response.json();
 
@@ -283,7 +283,7 @@ export default {
   if (this.currentSession[0]) {
     const sessionID = this.currentSession[0]._id;
     try {
-      const response = await fetch(`http://localhost:3000/sessions/${sessionID}`);
+      const response = await fetch(process.env.VUE_APP_BACKEND_API + `/sessions/${sessionID}`);
       if (response.ok) {
         const data = await response.json();
         this.currentSession[0].attendance = data.attendance;

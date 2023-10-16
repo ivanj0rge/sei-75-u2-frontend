@@ -55,7 +55,7 @@ export default {
 
     mounted() {
         const route = useRoute()
-        fetch(`http://localhost:3000/students/${route.params.id}`)
+        fetch(process.env.VUE_APP_BACKEND_API + `/students/${route.params.id}`)
             .then(res => res.json())
             .then(data => {
                 this.student.id = route.params.id,
@@ -67,7 +67,7 @@ export default {
                 this.student.sessionsAttended = data.sessionsAttended
             }),
 
-            fetch('http://localhost:3000/sessions')
+            fetch(process.env.VUE_APP_BACKEND_API + '/sessions')
             .then(response => response.json())
             .then(result => {
                 this.sessions = result

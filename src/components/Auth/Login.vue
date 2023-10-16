@@ -41,7 +41,7 @@ export default {
             console.log(userData);
             this.userName = userData.given_name
             this.$cookies.set('user_session', response.credential);
-            fetch('http://localhost:3000/login', {
+            fetch(process.env.VUE_APP_BACKEND_API + '/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/Json'
@@ -76,6 +76,6 @@ export default {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  text-align: center; /* Center text */
+  text-align: center;
 }
 </style>

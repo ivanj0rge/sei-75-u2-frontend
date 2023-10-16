@@ -27,7 +27,7 @@
   </template>
   
 <script>
-const API_URL = 'http://localhost:3000/instructors';
+const API_URL = process.env.VUE_APP_BACKEND_API + '/instructors';
 
 export default {
     name: 'InstructorsPage',

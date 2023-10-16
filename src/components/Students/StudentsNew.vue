@@ -48,7 +48,7 @@ export default {
                 return
             }
 
-            fetch('http://localhost:3000/students', {
+            fetch(process.env.VUE_APP_BACKEND_API + '/students', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

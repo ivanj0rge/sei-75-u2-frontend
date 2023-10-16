@@ -44,7 +44,7 @@ export default {
 
     mounted() {
         const route = useRoute()
-        fetch(`http://localhost:3000/instructors/${route.params.id}`)
+        fetch(process.env.VUE_APP_BACKEND_API + `/instructors/${route.params.id}`)
             .then(res => res.json())
             .then(data => {
                 this.instructor.id = route.params.id,
@@ -57,7 +57,7 @@ export default {
 
     methods: {
         editInstructor: function () {
-            fetch(`http://localhost:3000/instructors/${this.instructor.id}`, {
+            fetch(process.env.VUE_APP_BACKEND_API + `/instructors/${this.instructor.id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json"

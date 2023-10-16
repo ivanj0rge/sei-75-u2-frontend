@@ -57,7 +57,7 @@ export default {
 
     mounted() {
         const route = useRoute();
-        fetch(`http://localhost:3000/session/${route.params._id}`)
+        fetch(process.env.VUE_APP_BACKEND_API + `/session/${route.params._id}`)
             .then((res) => res.json())
             .then((data) => {
                 this.session.id = route.params._id;
@@ -70,7 +70,7 @@ export default {
     methods: {
         async fetchStudents() {
             try {
-                const response = await fetch('http://localhost:3000/students/');
+                const response = await fetch(process.env.VUE_APP_BACKEND_API + '/students/');
                 if (response.ok) {
                     const data = await response.json();
                     this.students = data;

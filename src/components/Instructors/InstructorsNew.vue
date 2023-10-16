@@ -74,7 +74,7 @@ export default {
 
             this.instructor.isAdmin = this.instructor.isAdmin === "true"
 
-            fetch('http://localhost:3000/instructors', {
+            fetch(process.env.VUE_APP_BACKEND_API + '/instructors', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
