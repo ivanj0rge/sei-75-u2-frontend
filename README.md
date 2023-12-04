@@ -19,7 +19,7 @@ Start the Node.js backend server with npm start.
 
 Timeframe & Working Team:
 
-I worked independently on the Muay Thai AMS project during the sixth week of the course.
+I worked independently on the Muay Thai AMS project during the sixth week of the GA Software Engineering course.
 
 Technologies Used:
 
