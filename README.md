@@ -1,4 +1,6 @@
 
+![Screenshot 2023-12-06 141026](https://github.com/ivanj0rge/sei-75-u2-frontend/assets/143030533/bf726596-ddaa-4dde-9c8b-8856994e05b6)
+
 Description:
 
 Muay Thai AMS (Automatic Management System) is a cutting-edge Dojo Management Web App, meticulously crafted during the sixth week of the course. This solo project leverages the MEVN (MongoDB, Express.js, Vue.js, Node.js) infrastructure, offering a comprehensive solution for tracking student attendance, managing rankings, and monitoring progress in martial arts dojos. The application is deployed on Netlify, providing a seamless and user-friendly experience for dojo management.
